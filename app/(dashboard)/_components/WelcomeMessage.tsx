@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useUser } from '@clerk/nextjs'
 
-const WelcomeMessage = () => {
+export default function WelcomeMessage() {
 
     const { user, isLoaded } = useUser()
 
@@ -18,5 +18,3 @@ const WelcomeMessage = () => {
         </div>
     )
 }
-
-export default WelcomeMessage
