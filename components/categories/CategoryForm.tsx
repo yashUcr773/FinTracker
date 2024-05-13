@@ -1,19 +1,19 @@
-import { insertAccountsSchema } from "@/db/schema"
 import { z } from "zod"
-import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form"
+import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form"
 import { useForm } from "react-hook-form"
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Input } from "./ui/input"
-import { Button } from "./ui/button"
+import { Input } from "../ui/input"
+import { Button } from "../ui/button"
 import { Trash } from "lucide-react"
+import { insertCategoriesSchema } from "@/db/schema"
 
-const formSchema = insertAccountsSchema.pick({
+const formSchema = insertCategoriesSchema.pick({
     name: true
 })
 
 type FormValues = z.input<typeof formSchema>
 
-interface AccountFormProps {
+interface CategoryFormProps {
     id?: string
     defaultValues?: FormValues,
     onSubmit: (values: FormValues) => void
@@ -21,7 +21,7 @@ interface AccountFormProps {
     disabled?: boolean
 }
 
-export default function Accountform({ onDelete, onSubmit, defaultValues, disabled, id }: AccountFormProps) {
+export default function Categoryform({ onDelete, onSubmit, defaultValues, disabled, id }: CategoryFormProps) {
 
     const form = useForm<FormValues>({
         resolver: zodResolver(formSchema),
@@ -46,19 +46,19 @@ export default function Accountform({ onDelete, onSubmit, defaultValues, disable
                             Name
                         </FormLabel>
                         <FormControl>
-                            <Input disabled={disabled} placeholder='eg. Cash, Bank, Credit Card' {...field} ></Input>
+                            <Input disabled={disabled} placeholder='eg. Food, Travel, etc.' {...field} ></Input>
                         </FormControl>
                     </FormItem>
                 )}></FormField>
 
                 <Button className='w-full' disabled={disabled}>
-                    {id ? "Save Changes" : "Create Account"}
+                    {id ? "Save Changes" : "Create Category"}
                 </Button>
 
                 {!!id && (
                     <Button type="button" disabled={disabled} onClick={handleDelete} className="w-full" variant={"outline"}>
                         <Trash className="size-4 mr-2"></Trash>
-                        Delete Account
+                        Delete Category
                     </Button>
                 )}
 

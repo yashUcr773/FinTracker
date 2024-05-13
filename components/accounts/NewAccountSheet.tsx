@@ -1,9 +1,9 @@
-import { useNewAccount } from "@/hooks/store/useNewAccounts";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "./ui/sheet";
+import { useNewAccount } from "@/hooks/accounts/store/useNewAccounts";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../ui/sheet";
 import Accountform from "./AccountForm";
 import { insertAccountsSchema } from "@/db/schema"
 import { z } from "zod"
-import { useCreateAccount } from "@/hooks/api/accounts/useCreateAccount";
+import { useCreateAccount } from "@/hooks/accounts/api/useCreateAccount";
 
 const formSchema = insertAccountsSchema.pick({
     name: true

@@ -1,7 +1,9 @@
 "use client"
 
-import EditAccountSheet from "@/components/EditAccountSheet"
-import NewAccountSheet from "@/components/NewAccountSheet"
+import EditAccountSheet from "@/components/accounts/EditAccountSheet"
+import NewAccountSheet from "@/components/accounts/NewAccountSheet"
+import EditCategorySheet from "@/components/categories/EditCategorySheet"
+import NewCategorySheet from "@/components/categories/NewCategorySheet"
 import { useEffect, useState } from "react"
 
 export default function SheetProvider() {
@@ -16,6 +18,8 @@ export default function SheetProvider() {
 
     return (
         <>
+            <NewCategorySheet></NewCategorySheet>
+            <EditCategorySheet></EditCategorySheet>
             <NewAccountSheet></NewAccountSheet>
             <EditAccountSheet></EditAccountSheet>
         </>

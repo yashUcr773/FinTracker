@@ -1,12 +1,12 @@
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "./ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "../ui/sheet";
 import Accountform from "./AccountForm";
 import { insertAccountsSchema } from "@/db/schema"
 import { z } from "zod"
-import { useOpenAccount } from "@/hooks/store/useOpenAccount";
-import useGetAccount from "@/hooks/api/accounts/useGetAccount";
+import { useOpenAccount } from "@/hooks/accounts/store/useOpenAccount";
+import useGetAccount from "@/hooks/accounts/api/useGetAccount";
 import { Loader2 } from "lucide-react";
-import { useEditAccount } from "@/hooks/api/accounts/useEditAccount";
-import { useDeleteAccount } from "@/hooks/api/accounts/useDeleteAccount";
+import { useEditAccount } from "@/hooks/accounts/api/useEditAccount";
+import { useDeleteAccount } from "@/hooks/accounts/api/useDeleteAccount";
 import { useConfirm } from "@/hooks/useConfirm";
 
 const formSchema = insertAccountsSchema.pick({
