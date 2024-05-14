@@ -4,6 +4,8 @@ import EditAccountSheet from "@/components/accounts/EditAccountSheet"
 import NewAccountSheet from "@/components/accounts/NewAccountSheet"
 import EditCategorySheet from "@/components/categories/EditCategorySheet"
 import NewCategorySheet from "@/components/categories/NewCategorySheet"
+import EditTransactionSheet from "@/components/transactions/EditTransactionSheet"
+import NewTransactionSheet from "@/components/transactions/NewTransactionSheet"
 import { useEffect, useState } from "react"
 
 export default function SheetProvider() {
@@ -18,6 +20,8 @@ export default function SheetProvider() {
 
     return (
         <>
+            <EditTransactionSheet></EditTransactionSheet>
+            <NewTransactionSheet></NewTransactionSheet>
             <NewCategorySheet></NewCategorySheet>
             <EditCategorySheet></EditCategorySheet>
             <NewAccountSheet></NewAccountSheet>

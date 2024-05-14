@@ -15,7 +15,7 @@ const routes = [
         label: 'Dashboard'
     },
     {
-        href: '/transations',
+        href: '/transactions',
         label: 'Transactions'
     },
     {

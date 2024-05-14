@@ -4,10 +4,10 @@ import { toast } from "sonner"
 
 import { client } from '@/lib/hono'
 
-type ResponseType = InferResponseType<typeof client.api.accounts[":id"]["$patch"]>
-type RequestType = InferRequestType<typeof client.api.accounts[":id"]["$patch"]>['json']
+type ResponseType = InferResponseType<typeof client.api.transactions.$post>
+type RequestType = InferRequestType<typeof client.api.transactions.$post>['json']
 
-export const useEditAccount = (id?: string) => {
+export const useCreateTransaction = () => {
     const queryClient = useQueryClient()
 
     const mutation = useMutation<
@@ -16,18 +16,15 @@ export const useEditAccount = (id?: string) => {
         RequestType
     >({
         mutationFn: async (json) => {
-            const response = await client.api.accounts[":id"]["$patch"]({ json, param: { id } });
+            const response = await client.api.transactions.$post({ json });
             return await response.json()
         },
         onSuccess: () => {
-            toast.success('Account Updated !!!')
-            queryClient.invalidateQueries({ queryKey: ['account', { id }] })
-            queryClient.invalidateQueries({ queryKey: ['accounts'] })
+            toast.success('Transaction Created !!!')
             queryClient.invalidateQueries({ queryKey: ['transactions'] })
-
         },
         onError: () => {
-            toast.error('Failed to update Account !!!')
+            toast.error('Failed to create Transaction !!!')
         }
     })
 
