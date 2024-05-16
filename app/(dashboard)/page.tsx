@@ -1,5 +1,5 @@
-import DataChart from "./_components/DataChart";
-import DataGrid from "./_components/DataGrid";
+import DataChart from "./_components/Graphs/DataChart";
+import DataGrid from "./_components/Graphs/DataGrid";
 
 export default function DashboardPage() {
 

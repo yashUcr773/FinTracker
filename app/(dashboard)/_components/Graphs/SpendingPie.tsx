@@ -1,27 +1,26 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { AreaChart, BarChart, FileSearch, LineChart, Loader2 } from "lucide-react"
-import AreaVariant from "./AreaVariant"
-import BarVariant from "./BarVariant"
-import LineVariant from "./LineVariant"
+import { FileSearch, Loader2, PieChart, Radar, Target } from "lucide-react"
 import { useState } from "react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import PieVariant from "./Variants/PieVariant"
+import RadarVariant from "./Variants/RadarVariant"
+import RadialVariant from "./Variants/RadialVariant"
 import { Skeleton } from "@/components/ui/skeleton"
 
-interface ChartProps {
+interface SpendingPieProps {
     data?: {
-        date: string,
-        income: number,
-        expenses: number
+        name: string,
+        value: number,
     }[]
 }
 
 enum CHART_VARIANT {
-    LINE = "Line", BAR = "Bar", AREA = "Area"
+    PIE = "Pie", RADAR = "Radar", RADIAL = "Radial"
 }
 
-export default function Chart({ data = [] }: ChartProps) {
+export default function SpendingPie({ data = [] }: SpendingPieProps) {
 
-    const [chartType, setChartType] = useState<CHART_VARIANT>(CHART_VARIANT.AREA)
+    const [chartType, setChartType] = useState<CHART_VARIANT>(CHART_VARIANT.PIE)
 
     const onTypeChange = (type: CHART_VARIANT) => {
         setChartType(type)
@@ -31,7 +30,7 @@ export default function Chart({ data = [] }: ChartProps) {
         <Card className="border-none drop-shadow-sm">
             <CardHeader className="flex space-y-2 lg:space-y-0 lg:flex-row lg:items-center justify-between">
                 <CardTitle className="text-xl line-clamp-1">
-                    Transactions
+                    Categories
                 </CardTitle>
 
                 <Select defaultValue={chartType} onValueChange={onTypeChange}>
@@ -39,24 +38,24 @@ export default function Chart({ data = [] }: ChartProps) {
                         <SelectValue placeholder="Chart Type"></SelectValue>
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value={CHART_VARIANT.AREA}>
+                        <SelectItem value={CHART_VARIANT.PIE}>
                             <div className="flex items-center">
-                                <AreaChart className="mr-2 size-4 shrink-0"></AreaChart>
-                                <p className="line-clamp-1">Area Chart</p>
+                                <PieChart className="mr-2 size-4 shrink-0"></PieChart>
+                                <p className="line-clamp-1">Pie Chart</p>
                             </div>
                         </SelectItem>
 
-                        <SelectItem value={CHART_VARIANT.LINE}>
+                        <SelectItem value={CHART_VARIANT.RADAR}>
                             <div className="flex items-center">
-                                <LineChart className="mr-2 size-4 shrink-0"></LineChart>
-                                <p className="line-clamp-1">Line Chart</p>
+                                <Radar className="mr-2 size-4 shrink-0"></Radar>
+                                <p className="line-clamp-1">Radar Chart</p>
                             </div>
                         </SelectItem>
 
-                        <SelectItem value={CHART_VARIANT.BAR}>
+                        <SelectItem value={CHART_VARIANT.RADIAL}>
                             <div className="flex items-center">
-                                <BarChart className="mr-2 size-4 shrink-0"></BarChart>
-                                <p className="line-clamp-1">Bar Chart</p>
+                                <Target className="mr-2 size-4 shrink-0"></Target>
+                                <p className="line-clamp-1">Radial Chart</p>
                             </div>
                         </SelectItem>
                     </SelectContent>
@@ -71,9 +70,9 @@ export default function Chart({ data = [] }: ChartProps) {
                     </div>
                 ) : (
                     <>
-                        {chartType === CHART_VARIANT.AREA && <AreaVariant data={data!}></AreaVariant>}
-                        {chartType === CHART_VARIANT.BAR && <BarVariant data={data!}></BarVariant>}
-                        {chartType === CHART_VARIANT.LINE && <LineVariant data={data!}></LineVariant>}
+                        {chartType === CHART_VARIANT.PIE && <PieVariant data={data!}></PieVariant>}
+                        {chartType === CHART_VARIANT.RADAR && <RadarVariant data={data!}></RadarVariant>}
+                        {chartType === CHART_VARIANT.RADIAL && <RadialVariant data={data!}></RadialVariant>}
                     </>
                 )}
             </CardContent>
@@ -81,7 +80,7 @@ export default function Chart({ data = [] }: ChartProps) {
     )
 }
 
-export function ChartLoader() {
+export function SpendingPieLoader() {
     return (
         <Card className="border-none drop-shadow-sm">
             <CardHeader className="flex space-y-2 lg:space-y-0 lg:flex-row lg:items-center justify-between">
