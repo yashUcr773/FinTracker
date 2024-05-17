@@ -45,7 +45,7 @@ interface DataCardProps extends BoxVariants, IconVariants {
 }
 export default function DataCard({ dateRange, icon: Icon, title, percentageChange = 0, value = 0, variant }: DataCardProps) {
     return (
-        <Card className="border-none drop-shadow-sm">
+        <Card className="border-none drop-shadow-xl shadow-xl">
             <CardHeader className="flex flex-row items-center justify-between gap-x-4">
                 <div className="space-y-2">
                     <CardTitle className="text-2xl line-clamp-1">
@@ -80,7 +80,7 @@ export default function DataCard({ dateRange, icon: Icon, title, percentageChang
 
 export function DataCardLoading() {
     return (
-        <Card className="border-none drop-shadow-sm h-[192px]">
+        <Card className="border-none drop-shadow-xl h-[192px]">
             <CardHeader className="flex flex-row items-center justify-between gap-x-4">
                 <div className="space-y-2">
                     <Skeleton className="h-6 w-24"></Skeleton>

@@ -27,7 +27,7 @@ export default function SpendingPie({ data = [] }: SpendingPieProps) {
     }
 
     return (
-        <Card className="border-none drop-shadow-sm">
+        <Card className="border-none drop-shadow-xl shadow-xl">
             <CardHeader className="flex space-y-2 lg:space-y-0 lg:flex-row lg:items-center justify-between">
                 <CardTitle className="text-xl line-clamp-1">
                     Categories
@@ -82,7 +82,7 @@ export default function SpendingPie({ data = [] }: SpendingPieProps) {
 
 export function SpendingPieLoader() {
     return (
-        <Card className="border-none drop-shadow-sm">
+        <Card className="border-none  drop-shadow-xl shadow-xl">
             <CardHeader className="flex space-y-2 lg:space-y-0 lg:flex-row lg:items-center justify-between">
                 <Skeleton className="h-8 w-48"></Skeleton>
                 <Skeleton className="h-8 w-full lg:w-[120px]"></Skeleton>

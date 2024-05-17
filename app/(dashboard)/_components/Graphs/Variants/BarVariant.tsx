@@ -19,8 +19,8 @@ export default function BarVariant({ data }: BarVariantProps) {
                     dataKey={'date'} tickFormatter={(value) => format(value, 'dd MMM')}
                     style={{ fontSize: "12px" }} tickMargin={16}></XAxis>
                 <Tooltip content={<CustomTooltip></CustomTooltip>}></Tooltip>
-                <Bar dataKey={'income'} fill='#3d82f6' className='drop-shadow-sm'></Bar>
-                <Bar dataKey={'expenses'} fill='#f435fe' className='drop-shadow-sm'></Bar>
+                <Bar dataKey={'income'} fill='#3d82f6' className=' drop-shadow-xl shadow-xl'></Bar>
+                <Bar dataKey={'expenses'} fill='#f435fe' className=' drop-shadow-xl shadow-xl'></Bar>
             </BarChart>
         </ResponsiveContainer>
     )

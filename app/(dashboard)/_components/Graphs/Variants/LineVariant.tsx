@@ -19,8 +19,8 @@ export default function LineVariant({ data }: LineVariantProps) {
                     dataKey={'date'} tickFormatter={(value) => format(value, 'dd MMM')}
                     style={{ fontSize: "12px" }} tickMargin={16}></XAxis>
                 <Tooltip content={<CustomTooltip></CustomTooltip>}></Tooltip>
-                <Line dot={false} dataKey={'income'} stroke='#3d82f6' strokeWidth={2} className='drop-shadow-sm'></Line>
-                <Line dot={false} dataKey={'expenses'} stroke='#f435fe' strokeWidth={2} className='drop-shadow-sm'></Line>
+                <Line dot={false} dataKey={'income'} stroke='#3d82f6' strokeWidth={2} className=' drop-shadow-xl shadow-xl'></Line>
+                <Line dot={false} dataKey={'expenses'} stroke='#f435fe' strokeWidth={2} className=' drop-shadow-xl shadow-xl'></Line>
             </LineChart>
         </ResponsiveContainer>
     )

@@ -33,11 +33,11 @@ export default function AreaVariant({ data }: AreaVariantProps) {
                 <Tooltip content={<CustomTooltip></CustomTooltip>}></Tooltip>
                 <Area type={'monotone'} dataKey={'income'}
                     stackId={'income'} strokeWidth={2}
-                    stroke='#3d82f6' fill='url(#income)' className='drop-shadow-sm'></Area>
+                    stroke='#3d82f6' fill='url(#income)' className=' drop-shadow-xl shadow-xl'></Area>
 
                 <Area type={'monotone'} dataKey={'expenses'}
                     stackId={'expenses'} strokeWidth={2}
-                    stroke='#expenses' fill='url(#expenses)' className='drop-shadow-sm'></Area>
+                    stroke='#expenses' fill='url(#expenses)' className=' drop-shadow-xl shadow-xl'></Area>
             </AreaChart>
         </ResponsiveContainer>
     )
