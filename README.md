@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FinTracker App
 
-## Getting Started
+Demo - [FinTracker.uk](https://FinTracker.uk/)
 
-First, run the development server:
+## Introduction
+The Budget Tracker and Financial Manager App is designed to help users manage their personal finances effectively. The app allows users to track expenses and generate reports to better understand their financial status.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- User authentication and authorization
+- Add Transactions.
+- Add Categories and Accounts to better classify the transactions.
+- Generate graphs to visualize the spendings.
+- Bulk upload Transactions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 14**: Powering the frontend and server-side rendering.
+- **Backend**: Backend Powered by Hono for better type safety.
+- **Form Validation**: Implemented using Zod and React Hook Form.
+- **Toasts**: Utilizing Sonner from shadcn-ui for feedback messages.
+- **Authentication**: Managed by Clerk, supporting Google OAuth.
+- **Components**: Shadcn
+- **Database**: PostgresSQL from Neon.tech
+- **Data Fetching** - React Query
+- **CSS**: Styled with Tailwind CSS.
+- **Icons**: Leveraging Lucide React and react-icons.
+- **Database ORM**: Drizzle for database operations.
+- **State Management**: Utilizing Zustand for state management.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Running Locally
 
-## Learn More
+To run the project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository: `https://github.com/yashUcr773/FinTracker.git`.
+2. Navigate to the project directory: `cd FinTracker`.
+3. Install dependencies: `npm install`.
+4. Run the development server: `npm run dev`.
+5. The application will be accessible at `http://localhost:3000` by default.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The Discord Clone application relies on the following environment variables. Ensure these variables are properly set up before running the application.
 
-## Deploy on Vercel
+- **`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`**: Public key provided by Clerk for client-side authentication.
+- **`CLERK_PUBLISHABLE_KEY`**: Public key provided by Clerk for client-side authentication.
+- **`CLERK_SECRET_KEY`**: Secret key provided by Clerk for server-side authentication.
+- **`NEXT_PUBLIC_CLERK_SIGN_IN_URL`**: 
+- **`NEXT_PUBLIC_CLERK_SIGN_UP_URL`**: 
+- **`NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`**: 
+- **`NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL`**: 
+- **`DRIZZLE_DATABASE_URL`**: 
+- **`NEXT_PUBLIC_APP_URL`**: 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Attribution
+
+- The project idea was inspired by [Code with Antonio](https://www.youtube.com/watch?v=N_uNKAus0II).
+
+## Planned Features
+
+- [x] Bulk upload
+- [x] Add categories and accounts
+- [] Bulk Edit
+- [] Subscription Tracker
+- [] Set Budgets
+- [] Set Finance Goals
+- [] Set Custom Currency
+- [] Allow multiple currencies?
+
+
+Feel free to contribute and enhance the project!
