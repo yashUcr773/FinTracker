@@ -2,6 +2,10 @@
 
 Demo - [FinTracker.uk](https://FinTracker.uk/)
 
+Test Account
+- Email - demouser@mailsac.com
+- Password - demo_user_1
+
 ## Introduction
 The Budget Tracker and Financial Manager App is designed to help users manage their personal finances effectively. The app allows users to track expenses and generate reports to better understand their financial status.
 
